@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
+
+    <title></title>
+  </head>
+  <body>
+    <h2>Leave Your details:</h2>
+        <form id="div1" action="/visit" method="POST">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input name="user_name" type="text" class="form-control" placeholder="Enter Your name" value="<%=@user_name%>">
+      </div>
+      <div class="form-group">
+        <label>Your E-Mail</label>
+        <input name="email" type="text" class="form-control" placeholder="Enter Your E-Mail" value="<%=@email%>">
+      </div>
+      <div class="form-group">
+        <label>Your Phone number</label>
+          <input name="phone" type="text" class="form-control" placeholder="Enter Your Phone number" value="<%=@phone%>">
+      </div>
+      <div class="form-group">
+        <label>Select time and date You want to come</label>
+        <input name="date_stamp" autocomplete="off" type="text" id="datetimepicker" class="form-control" placeholder="Select date and time" value="<%=@date_stamp%>">
+      </div>
+      <div class="form-group">
+        <label name="barber" type="text" id="barber">Select Your Barber</label>
+        <select name="barber" class="form-control">
+          <% @barbers.each do |item| %>
+            <option <%= @barber == item['name'] ? 'selected' : '' %>><%= item['name'] %></option> 
+          <% end %>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Pick the color you want to get: </label>
+        <select id="color" name="color">
+          <option value="#533D32">Dark Aubum</option>
+          <option value="#8B4513">Saddle Brown</option>
+          <option value="#8D4A43">Russet Red</option>
+          <option value="#D2691E">Chocolate</option>
+          <option value="#A0522D">Sienna</option>
+          <option value="#A56B46">Srawbery Blonde</option>
+          <option value="#71635A">Darkest Grey</option>
+          <option value="#A7856A">Light Golden Brown</option>
+          <option value="#E5C8A8">Pale Golden Blonde</option>
+          <option value="#CABFB1">Platinum Blonde</option>
+          <option value="#DCD0BA">Bleached Blonde</option>
+          <option value="#FFF5E1">White Blonde</option>
+        </select>
+      </div>
+
+
+    <button type="submit" class="btn btn-primary">Request visit</button>
+</form>
+  <script type="text/javascript">
+    $(function(){
+      $('#color').simplecolorpicker();
+      $('#datetimepicker').datetimepicker();
+    })
+  </script>
+  </body>
+</html>
