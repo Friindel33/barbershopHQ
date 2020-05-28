@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2020_05_26_150537) do
 
   create_table "barbers", force: :cascade do |t|
     t.text "name"
+    t.text "nickname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -21,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_05_26_150537) do
   create_table "clients", force: :cascade do |t|
     t.text "name"
     t.text "phone"
+    t.text "email"
     t.text "datestamp"
     t.text "barber"
     t.text "color"

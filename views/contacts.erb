@@ -20,7 +20,7 @@
                 <div class="form-group">
                   <label class="col-md-3 control-label" for="name">Name</label>
                   <div class="col-md-9">
-                    <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+                    <input id="name" name="contact[name]" type="text" placeholder="Your name" class="form-control" value="<%= @d.name %>">
                   </div>
                 </div>
 
@@ -28,7 +28,7 @@
                 <div class="form-group">
                   <label class="col-md-3 control-label" for="email">Your E-mail</label>
                   <div class="col-md-9">
-                    <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+                    <input id="email" name="contact[email]" type="text" placeholder="Your email" class="form-control"  value="<%= @d.email %>">
                   </div>
                 </div>
 
@@ -36,7 +36,8 @@
                 <div class="form-group">
                   <label class="col-md-3 control-label" for="message">Your message</label>
                   <div class="col-md-9">
-                    <textarea maxlength="300" class="form-control" id="message" name="message" placeholder="Please enter your message here...(max 300 characters)" rows="5"></textarea>
+                    <textarea maxlength="300" class="form-control" id="message" name="contact[message]" placeholder="Please enter your message here...(max 300 characters)" rows="5">
+                    </textarea>
                   </div>
                 </div>
 

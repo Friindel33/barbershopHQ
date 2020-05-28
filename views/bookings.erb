@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Visitor</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Date of Visit</th>
+          <th>Your Barber</th>
+          <th>Color to use</th>
+        </tr>
+      </thead>
+
+      <tbody>
+    <h1>List of the Bookings</h1>
+    <% @clients.each do |client| %>
+      <tr>
+        <td><%= client.id %></td>
+        <td><a href="/client/<%= client.name %>"><%= client.name %></a>
+        <td><%= client.phone %></td>
+        <td><%= client.email %></td>
+        <td><%= client.datestamp %></td>
+        <td><%= client.barber %></td>
+        <td style="background-color: <%= client.color %>"><%= client.color %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+  </body>
+</html>

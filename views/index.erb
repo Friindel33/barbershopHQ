@@ -5,11 +5,23 @@
     <title></title>
   </head>
   <body>
-  <h2>Our Barbers</h2>
-  <% @barbers.each do |barber|%>
-    <p>
-      <%= barber.name %>
-    </p>
-  <% end %>
+    <table class="table table-striped">
+
+      <thead>
+        <tr>
+          <th>Name</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <h2>Our Barbers</h2>
+          <% @barbers.each do |barber|%>
+            <tr>
+              <td><a href="/barber/<%= barber.nickname %>"><%= barber.name %></a>
+            </tr>
+          <% end %>
+        </tbody>
+
+  </table>
   </body>
 </html>
