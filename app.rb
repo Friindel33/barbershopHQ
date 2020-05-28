@@ -5,6 +5,10 @@ require 'sinatra/activerecord'
 
 set :database, "sqlite3:barbershop2.db"
 
+get '/about' do
+	erb :about
+end
+
 class EmailValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     unless value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
